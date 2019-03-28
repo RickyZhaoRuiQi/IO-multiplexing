@@ -5,12 +5,12 @@
 3.int epoll_wait(int epfd,struct epoll_event* events,int maxevents,int time);
 
 
-1.size参数现在并不起作用，只是个黑内核的一个提示，告诉它事件表需要多大。该函数返回的文件描述符将作用于其他
+1.size参数现在并不起作用，只是个内核的一个提示，告诉它事件表需要多大。该函数返回的文件描述符将作用于其他
 所有epoll系统调用的第一个参数，以指定要访问的内核事件表
 
 2.epoll的事件注册函数，它不同于select是在监听事件时告诉内核要监听什么类型的事件，而是在这里先注册要监听的事件
 类型。第一个参数时epoll_create返回值。第二个参数表示动作
-EPOLL_CTL_ADD:注册新的fd到pefd中
+EPOLL_CTL_ADD:注册新的fd到epfd中
 EPOLL_CTL_MOD:修改已经注册的fd监听事件
 EPOLL_CTL_DEL:从epfd中删除一个fd
 第三个参数是需要作用的对象，第四个参数告诉内核事件类型（在移除时不需要使用）
