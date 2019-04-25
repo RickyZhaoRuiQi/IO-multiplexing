@@ -8,7 +8,7 @@ int select(int nfds,fd_set* readfds,fd_set* writefds,fd_set* exceptfds,struct ti
 (3):timeout参数用来设置select函数的超时时间。
 (4):返回值大于0代表就绪文件描述符数量，等于0代表超时，小于0代表出错
 
-FD_ZERO(fd_set *fdset);					清除fdset的所有位i
+FD_ZERO(fd_set *fdset);				清除fdset的所有位
 FD_SET(int fd,fd_set *fdset);			设置fdset的位fd
 FD_CLR(int fd,fd_set *fdser);			清除fdset的位fd
 int FD_ISSET(int fd,fd_set *fdset);		测试fdset的位fd是否被设置
