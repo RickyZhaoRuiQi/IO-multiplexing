@@ -2,7 +2,7 @@
 int poll(struct pollfd* fds,nfds_t nfds,int timeout);
 
 (1)struct pollfd{
-		int fd;				//文件描述符
+		int fd;			//文件描述符
 		short events;		//注册的事件
 		short revents;		//实际发生的事件，由内核填充
 		}
@@ -13,7 +13,7 @@ int poll(struct pollfd* fds,nfds_t nfds,int timeout);
 	主要的poll事件类型
 	POLLIN		数据可读
 	POLLOUT		数据可写
-	POLLRDHUP	TCP连接被对方关闭，或者对方关闭了写操作，又GNU引入
+	POLLRDHUP	TCP连接被对方关闭，或者对方关闭了写操作，由GNU引入
 
 (2)nfds参数指定被监听事件集合fds的大小
 	typedef unsigned long int nfds_t
